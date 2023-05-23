@@ -1,0 +1,38 @@
+<resources>
+    <string-array name="heroes">
+        <item>Selecione</item>
+        <item>Herói</item>
+        <item>Vilão</item>
+    </string-array>
+    <string-array name="universe">
+        <item>Selecione</item>
+        <item>Marvel</item>
+        <item>DC</item>
+    </string-array>
+    <string name="app_name">Fundatec Heroes TI21</string>
+    <string name="Qual_nome">Qual é o seu nome?</string>
+    <string name="usuarionovo">Novo Por Aqui?</string>
+    <string name="limpar">LIMPAR</string>
+    <string name="Okay">OK</string>
+    <string name="email">Email</string>
+    <string name="senha">Senha</string>
+    <string name="login">Login</string>
+    <string name="inserirSenha">Insira sua senha</string>
+    <string name="inserirEmail">Insira seu email</string>
+    <string name="inserirNome">Digite seu Nome</string>
+    <string name="registrar">Registrar</string>
+    <string name="sbv">Seja bem-vindo %s</string>
+    <string name="login_error_message">E-mail ou senha estão inválidos!</string>
+    <string name="login_email_error_message">E-mail inválido</string>
+    <string name="login_password_error_message">Senha inválida</string>
+    <string name="home">Home</string>
+    <string name="nomeHerois">Insira o nome do Herói/Vilão</string>
+    <string name="description">Insira a descrição do Herói/Vilão</string>
+    <string name="dataNascimento">Data de nascimento</string>
+    <string name="agenciaHeroi">Agencia do Herói/Vilão</string>
+    <string name="herois">Heróis/Vilões</string>
+    <string name="utlImagemHeroi">Insira a URL da imagem do Herói/Vilão</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
