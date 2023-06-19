@@ -8,6 +8,8 @@ class CharacterViewHolder(private val binding: CharacterListItemBinding) : Recyc
 
     fun bind(character: CharacterModel) {
         binding.tvNamePersonagem.text = character.name
+        binding.gokuzin.imageAlpha
+
     }
 
 }
