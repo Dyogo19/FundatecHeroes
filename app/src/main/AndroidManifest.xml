@@ -23,7 +23,7 @@
             android:name=".home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".heroisRegister.RegisterHeroisActivity"
+            android:name=".character.heroisRegister.RegisterHeroisActivity"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"

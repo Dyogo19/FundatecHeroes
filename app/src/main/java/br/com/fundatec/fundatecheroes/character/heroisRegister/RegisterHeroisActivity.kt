@@ -1,4 +1,4 @@
-package br.com.fundatec.fundatecheroes.heroisRegister
+package br.com.fundatec.fundatecheroes.character.heroisRegister
 
 import android.os.Bundle
 
