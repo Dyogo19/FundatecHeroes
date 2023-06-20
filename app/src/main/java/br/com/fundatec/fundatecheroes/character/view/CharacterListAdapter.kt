@@ -2,7 +2,9 @@ package br.com.fundatec.fundatecheroes.character.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import br.com.fundatec.fundatecheroes.R
 import br.com.fundatec.fundatecheroes.character.domain.CharacterModel
 import br.com.fundatec.fundatecheroes.databinding.CharacterListItemBinding
 

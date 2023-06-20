@@ -1,3 +1,14 @@
 package br.com.fundatec.fundatecheroes.character.heroisRegister
 
-class RegisterHeroisViewState 
+sealed class RegisterHeroisViewState {
+
+    object ShowHomeScreen : RegisterHeroisViewState()
+    object ShowLoading : RegisterHeroisViewState()
+    object ShowNameError : RegisterHeroisViewState()
+    object ShowDescriptionError : RegisterHeroisViewState()
+    object ShowMessageError : RegisterHeroisViewState()
+    object ShowAgeError : RegisterHeroisViewState()
+    object ShowBirthDateError : RegisterHeroisViewState()
+}
+
+
