@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import br.com.fundatec.fundatecheroes.HomeViewPager
-import br.com.fundatec.fundatecheroes.heroisRegister.RegisterHeroisActivity
+import br.com.fundatec.fundatecheroes.character.heroisRegister.RegisterHeroisActivity
 import br.com.fundatec.fundatecheroes.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
