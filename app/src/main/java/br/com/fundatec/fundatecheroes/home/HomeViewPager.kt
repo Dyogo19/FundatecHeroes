@@ -11,7 +11,10 @@ class HomeViewPager(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     }
 
     override fun getPageTitle(position: Int): CharSequence {
-        return "Fragment $position"
+        if(position.equals(0)){
+            return "Herois"
+        }
+        return "Vilões"
     }
 
     override fun getItem(position: Int): Fragment {
