@@ -2,9 +2,11 @@ package br.com.fundatec.fundatecheroes.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import br.com.fundatec.fundatecheroes.R
+import br.com.fundatec.fundatecheroes.database.FHDatabase
 import br.com.fundatec.fundatecheroes.databinding.ActivityLoginBinding
 import br.com.fundatec.fundatecheroes.login.model.LoginViewState
 import br.com.fundatec.fundatecheroes.profile.ProfileActivity
@@ -20,6 +22,10 @@ class LoginActivity : AppCompatActivity() {
 
     private val viewModel: LoginViewModel by viewModels()
 
+    private val database: FHDatabase by lazy {
+        FHDatabase.getInstance()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -28,6 +34,7 @@ class LoginActivity : AppCompatActivity() {
 
 
 
+        Log.e("teste", database.userDao().getUser().toString())
         initializeObserver()
 
         binding.btLogin.setOnClickListener {
