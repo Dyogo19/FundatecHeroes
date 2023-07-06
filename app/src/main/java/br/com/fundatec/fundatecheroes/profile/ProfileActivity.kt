@@ -11,6 +11,7 @@ import br.com.fundatec.fundatecheroes.databinding.ActivityProfileBinding
 
 import br.com.fundatec.fundatecheroes.profile.model.ProfileViewState
 import br.com.fundatec.fundatecheroes.home.HomeActivity
+import br.com.fundatec.fundatecheroes.login.LoginActivity
 import com.example.module.components.hide
 import com.example.module.components.show
 import com.google.android.material.snackbar.Snackbar
@@ -78,8 +79,6 @@ class ProfileActivity : AppCompatActivity() {
 
     private fun showHome() {
         binding.pbLoading.hide()
-        val intent = Intent(this@ProfileActivity, HomeActivity::class.java)
-        startActivity(intent)
         finish()
     }
 

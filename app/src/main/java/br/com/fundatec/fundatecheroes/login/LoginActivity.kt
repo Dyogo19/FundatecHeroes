@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
     private val viewModel: LoginViewModel by viewModels()
 
+
     private val database: FHDatabase by lazy {
         FHDatabase.getInstance()
     }
@@ -95,7 +96,7 @@ class LoginActivity : AppCompatActivity() {
         binding.pbLoading.hide()
         val intent = Intent (this@LoginActivity, ProfileActivity::class.java)
         startActivity(intent)
-        finish()
+
     }
 
 }

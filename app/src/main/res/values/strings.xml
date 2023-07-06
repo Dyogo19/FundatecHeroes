@@ -35,7 +35,7 @@
     <string name="description">Insira a descrição do Herói/Vilão</string>
     <string name="dataNascimento">Data de nascimento</string>
     <string name="idadeHeroi">Idade do Herói/Vilão</string>
-    <string name="herois">Heróis/Vilões</string>
+    <string name="herois">Cadastrar Heróis/Vilões</string>
     <string name="utlImagemHeroi">Insira a URL da imagem do Herói/Vilão</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
