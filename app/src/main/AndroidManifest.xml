@@ -30,7 +30,7 @@
             android:name=".character.heroisRegister.RegisterHeroisActivity"
             android:exported="false" />
         <activity
-            android:name=".main.MainActivity"
+            android:name=".main.SplashActivity"
             android:exported="true" >
 
             <intent-filter>

@@ -8,6 +8,7 @@ import br.com.fundatec.fundatecheroes.network.RetrofitNetworkClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
+import java.time.LocalDate
 
 class LoginRepository {
     private val database: FHDatabase by lazy {
