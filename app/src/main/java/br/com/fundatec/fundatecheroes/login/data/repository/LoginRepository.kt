@@ -9,6 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response
 import java.time.LocalDate
+import java.util.*
 
 class LoginRepository {
     private val database: FHDatabase by lazy {
@@ -51,6 +52,18 @@ class LoginRepository {
             email = email,
             password = password,
         )
+    }
+
+    suspend fun getCacheDate(): Date? {
+        return withContext(Dispatchers.IO) {
+            database.userDao().getUserDate()
+        }
+    }
+
+    suspend fun clearCache() {
+        return withContext(Dispatchers.IO) {
+            database.userDao().clearCache()
+        }
     }
 
 }

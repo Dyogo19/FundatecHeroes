@@ -23,6 +23,10 @@ class HomeActivity : AppCompatActivity() {
         binding.homeTabLayout.setupWithViewPager(binding.homeViewPager)
 
         binding.btHerois.setOnClickListener {
+            startActivity(Intent(this@HomeActivity, RegisterHeroisActivity::class.java))
+        }
+
+        binding.btHerois.setOnClickListener {
             showHeroesRegister()
         }
     }
@@ -32,5 +36,7 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+
+
 }
 
