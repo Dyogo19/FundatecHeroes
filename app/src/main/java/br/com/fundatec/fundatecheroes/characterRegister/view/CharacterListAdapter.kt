@@ -1,16 +1,17 @@
-package br.com.fundatec.fundatecheroes.character.view
+package br.com.fundatec.fundatecheroes.characterRegister.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import br.com.fundatec.fundatecheroes.character.data.local.CharacterModel
 import br.com.fundatec.fundatecheroes.databinding.CharacterListItemBinding
+import br.com.fundatec.fundatecheroes.character.data.local.CharacterModel
 
 class CharacterListAdapter : RecyclerView.Adapter<CharacterViewHolder>() {
     private val list: MutableList<CharacterModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
-        val binding = CharacterListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            CharacterListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CharacterViewHolder(binding)
     }
 

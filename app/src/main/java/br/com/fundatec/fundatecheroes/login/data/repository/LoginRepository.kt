@@ -4,6 +4,7 @@ import android.util.Log
 import br.com.fundatec.fundatecheroes.database.FHDatabase
 import br.com.fundatec.fundatecheroes.login.data.local.UserEntity
 import br.com.fundatec.fundatecheroes.login.data.remote.LoginResponse
+import br.com.fundatec.fundatecheroes.login.data.remote.UserRequest
 import br.com.fundatec.fundatecheroes.network.RetrofitNetworkClient
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -21,11 +22,13 @@ class LoginRepository {
             .createNetworkClient()
             .create(LoginService::class.java)
 
+
+
     suspend fun login(email: String, password: String): Boolean {
         return withContext(Dispatchers.IO) {
             try {
                 val response = client.getUser(email, password)
-                saveUser(response)
+                saveUserLogin(response)
                 response.isSuccessful
             } catch (exception: Exception) {
                 Log.e("login", exception.message.orEmpty())
@@ -34,7 +37,7 @@ class LoginRepository {
         }
     }
 
-    private suspend fun saveUser(user: Response<LoginResponse>) {
+    private suspend fun saveUserLogin(user: Response<LoginResponse>) {
         return withContext(Dispatchers.IO) {
             if (user.isSuccessful) {
                 user.body()?.run {
@@ -54,6 +57,20 @@ class LoginRepository {
         )
     }
 
+
+    suspend fun createUser(name: String, email: String, password: String): Boolean {
+        return withContext(Dispatchers.IO) {
+            try {
+                val response = client.postUser(UserRequest(name, email, password))
+                response.isSuccessful
+            } catch (exception: Exception) {
+                Log.e("createUser", exception.message.orEmpty())
+                false
+            }
+        }
+
+    }
+
     suspend fun getCacheDate(): Date? {
         return withContext(Dispatchers.IO) {
             database.userDao().getUserDate()
@@ -65,5 +82,4 @@ class LoginRepository {
             database.userDao().clearCache()
         }
     }
-
 }

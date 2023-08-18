@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import br.com.fundatec.fundatecheroes.character.domain.CharacterModel
+import br.com.fundatec.fundatecheroes.character.data.local.CharacterModel
 import br.com.fundatec.fundatecheroes.character.view.CharacterListAdapter
 import br.com.fundatec.fundatecheroes.databinding.FragmentCharacterBinding
 
@@ -16,11 +16,6 @@ class CharacterFragment : Fragment() {
     private lateinit var binding: FragmentCharacterBinding
 
     private val adapter by lazy { CharacterListAdapter() }
-    private val list = listOf(
-        CharacterModel("Goku"), CharacterModel("Goku"), CharacterModel("Goku"),
-        CharacterModel("Goku"), CharacterModel("Goku"), CharacterModel("Goku"),
-        CharacterModel("Goku"), CharacterModel("Goku"), CharacterModel("Goku"),
-    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +28,7 @@ class CharacterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.rvList.adapter = adapter
-        adapter.add(list)
+
     }
 
     companion object {

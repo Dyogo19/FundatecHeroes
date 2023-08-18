@@ -9,7 +9,7 @@ import br.com.fundatec.fundatecheroes.database.converters.Converters
 import br.com.fundatec.fundatecheroes.login.data.local.UserDao
 import br.com.fundatec.fundatecheroes.login.data.local.UserEntity
 
-@Database(entities = [UserEntity::class], version = 2)
+@Database(entities = [UserEntity::class], version = 1)
 @TypeConverters(Converters::class)
 abstract class FHDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao

@@ -13,9 +13,12 @@ interface UserDao {
     @Query("SELECT * from  userTable")
     fun getUser(): List<UserEntity>
 
-    @Query("SELECT date from userTable")
+    @Query("SELECT lastLoginTime from userTable")
     fun getUserDate(): Date?
 
     @Query("DELETE from userTable")
     fun clearCache()
+
+    @Query("SELECT id from userTable")
+    fun getId(): Int
 }

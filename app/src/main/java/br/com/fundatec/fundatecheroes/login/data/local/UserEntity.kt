@@ -11,5 +11,5 @@ data class UserEntity(
     val name: String,
     val email: String,
     val password: String,
-    val date: Date = Date(),
+    val lastLoginTime: Date = Date()
 )

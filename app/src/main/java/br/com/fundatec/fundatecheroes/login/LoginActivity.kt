@@ -11,6 +11,7 @@ import br.com.fundatec.fundatecheroes.databinding.ActivityLoginBinding
 import br.com.fundatec.fundatecheroes.login.model.LoginViewState
 import br.com.fundatec.fundatecheroes.profile.ProfileActivity
 import br.com.fundatec.fundatecheroes.home.HomeActivity
+import br.com.fundatec.fundatecheroes.login.model.LoginViewModel
 import com.example.module.components.hide
 import com.example.module.components.show
 import com.google.android.material.snackbar.Snackbar
@@ -32,7 +33,6 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
 
         Log.e("teste", database.userDao().getUser().toString())

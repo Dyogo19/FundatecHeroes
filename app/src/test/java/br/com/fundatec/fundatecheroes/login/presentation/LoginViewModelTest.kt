@@ -2,7 +2,7 @@ package br.com.fundatec.fundatecheroes.login.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import br.com.fundatec.fundatecheroes.login.LoginViewModel
+import br.com.fundatec.fundatecheroes.login.model.LoginViewModel
 import br.com.fundatec.fundatecheroes.login.model.LoginViewState
 import io.mockk.spyk
 import io.mockk.verifySequence
