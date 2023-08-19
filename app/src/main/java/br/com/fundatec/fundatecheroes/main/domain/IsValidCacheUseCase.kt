@@ -7,7 +7,9 @@ import java.util.concurrent.TimeUnit
 
 private const val MINUTES_TO_CACHE = 10
 
+
 class IsValidCacheUseCase {
+
     private val repository by lazy { LoginRepository() }
 
     suspend fun isValidCache(): Boolean {

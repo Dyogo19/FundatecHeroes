@@ -19,14 +19,6 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-        supportActionBar?.hide()
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-        }, 3000)
-
         viewModel.state.observe(this) { viewState ->
             when (viewState) {
                 SplashViewState.ShowHome -> showHome()
@@ -34,8 +26,6 @@ class SplashActivity : AppCompatActivity() {
             }
         }
     }
-
-
 
     private fun showHome() {
         startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
@@ -46,7 +36,6 @@ class SplashActivity : AppCompatActivity() {
         startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
         finish()
     }
-
 }
 
 
