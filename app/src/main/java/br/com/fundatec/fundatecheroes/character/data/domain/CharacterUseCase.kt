@@ -8,7 +8,7 @@ class CharacterUseCase {
 
     private val repository by lazy { CharacterRepository() }
 
-     fun getCharacters(): List<CharacterModel>{
+    suspend fun getCharacters(): List<CharacterModel>{
         return repository.getCharacters()
     }
 }

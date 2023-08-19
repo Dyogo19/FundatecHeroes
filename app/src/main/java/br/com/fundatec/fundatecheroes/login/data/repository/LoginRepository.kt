@@ -23,7 +23,6 @@ class LoginRepository {
             .create(LoginService::class.java)
 
 
-
     suspend fun login(email: String, password: String): Boolean {
         return withContext(Dispatchers.IO) {
             try {
@@ -51,6 +50,7 @@ class LoginRepository {
 
     private fun LoginResponse.userResponseToEntity(): UserEntity {
         return UserEntity(
+            id = id,
             name = name,
             email = email,
             password = password,
@@ -61,7 +61,7 @@ class LoginRepository {
     suspend fun createUser(name: String, email: String, password: String): Boolean {
         return withContext(Dispatchers.IO) {
             try {
-                val response = client.postUser(UserRequest(name, email, password))
+                val response = client.postUser(UserRequest(name = name, email = email, password = password))
                 response.isSuccessful
             } catch (exception: Exception) {
                 Log.e("createUser", exception.message.orEmpty())
@@ -83,3 +83,4 @@ class LoginRepository {
         }
     }
 }
+

@@ -25,11 +25,11 @@
             android:name=".home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".character.heroisRegister.RegisterHeroisActivity"
+            android:name=".character.heroisRegister.HeroRegisterActivity"
             android:exported="false" />
         <activity
             android:name=".login.LoginActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".main.SplashActivity"
             android:exported="true" >

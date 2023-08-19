@@ -30,8 +30,8 @@ class ProfileActivity : AppCompatActivity() {
 
         binding.registrar.setOnClickListener {
             viewModel.validateInputsRegistrer(
-                password = binding.pwd.text.toString(),
                 email = binding.email.text.toString(),
+                password = binding.pwd.text.toString(),
                 name = binding.inserirNome.text.toString(),
 
                 )

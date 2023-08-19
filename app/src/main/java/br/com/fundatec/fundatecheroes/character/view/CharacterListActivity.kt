@@ -14,7 +14,7 @@ import com.example.module.components.hide
 import com.example.module.components.show
 import com.google.android.material.snackbar.Snackbar
 
-class CharacterActivity : AppCompatActivity() {
+class CharacterListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHeroRegisterBinding
     private val viewModel: CharacterViewModel by viewModels()
@@ -53,7 +53,7 @@ class CharacterActivity : AppCompatActivity() {
     }
 
     private fun navigateNewCharacter() {
-        val intent = Intent(this@CharacterActivity, HomeActivity::class.java)
+        val intent = Intent(this@CharacterListActivity, HomeActivity::class.java)
         startActivity(intent)
     }
 

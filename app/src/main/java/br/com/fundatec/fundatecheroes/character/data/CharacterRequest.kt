@@ -9,4 +9,4 @@ data class CharacterRequest (
     val universeType: String,
     val characterType: String,
     val age: Int,
-    val birthday: Date        )
+    val birthday: String        )

@@ -14,10 +14,11 @@ interface CharacterService {
 
     @POST("/api/character/{idUser}")
     suspend fun createCharacter(
+        @Path("idUser") idUser:Int,
         @Body characterRequest: CharacterRequest
     ):Response<ResponseBody>
 
     @GET("/api/character/{idUser}")
-    fun getCharacter(@Path("idUser") idUser: Int): Response<List<CharacterResponse>>
+    suspend fun getCharacter(@Path("idUser") idUser: Int): Response<List<CharacterResponse>>
 
 }

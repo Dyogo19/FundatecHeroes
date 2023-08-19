@@ -10,6 +10,10 @@ sealed class CharacterViewState {
     object ShowMessageError : CharacterViewState()
     object ShowAgeError : CharacterViewState()
     object ShowBirthDateError : CharacterViewState()
+    object ShowImageError : CharacterViewState() {
+
+    }
+
     data class Success(val characters: List<CharacterModel>): CharacterViewState()
     data class Error(val error: Throwable): CharacterViewState()
 }

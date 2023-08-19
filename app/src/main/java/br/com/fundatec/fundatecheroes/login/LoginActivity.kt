@@ -20,9 +20,7 @@ import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
-
     private val viewModel: LoginViewModel by viewModels()
-
 
     private val database: FHDatabase by lazy {
         FHDatabase.getInstance()
@@ -30,24 +28,20 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide()
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-        Log.e("teste", database.userDao().getUser().toString())
         initializeObserver()
 
         binding.btLogin.setOnClickListener {
             viewModel.validateInputs(
                 password = binding.pwd.text.toString(),
                 email = binding.email.text.toString(),
-
             )
         }
 
         binding.novo.setOnClickListener{
-            showNovo()
+            showProfile()
         }
     }
 
@@ -59,14 +53,11 @@ class LoginActivity : AppCompatActivity() {
                 LoginViewState.ShowEmailErrorMessage -> showEmailError()
                 LoginViewState.ShowPasswordErrorMessage -> showPasswordError()
                 LoginViewState.ShowLoading -> showLoading()
-
             }
         }
     }
 
-
     private fun showLoading() {
-
         binding.pbLoading.show()
     }
 
@@ -92,11 +83,10 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun showNovo(){
+    private fun showProfile(){
         binding.pbLoading.hide()
-        val intent = Intent (this@LoginActivity, ProfileActivity::class.java)
+
+        val intent = Intent(this@LoginActivity, ProfileActivity::class.java)
         startActivity(intent)
-
     }
-
 }

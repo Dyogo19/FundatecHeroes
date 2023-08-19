@@ -8,8 +8,8 @@ import java.util.*
 data class UserEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
-    val name: String,
     val email: String,
     val password: String,
+    val name: String,
     val lastLoginTime: Date = Date()
 )

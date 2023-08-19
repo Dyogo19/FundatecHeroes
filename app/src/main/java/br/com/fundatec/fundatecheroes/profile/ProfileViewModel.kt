@@ -17,11 +17,10 @@ class ProfileViewModel : ViewModel() {
 
     fun validateInputsRegistrer(name: String?, email: String?, password: String?) {
         var patternEmail = Pattern.compile("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")
-        var patternSenha = Pattern.compile("^.{4,}$")
 
 
         var matcherEmail = patternEmail.matcher(email)
-        var matcherSenha = patternSenha.matcher(password)
+
 
 
 
@@ -55,20 +54,16 @@ class ProfileViewModel : ViewModel() {
             return
         }
 
-        if (!matcherSenha.matches()) {
-            viewState.value = ProfileViewState.ShowPasswordErrorMessage
-            return
-        }
 
 
-        fetchLogin(name, email, password)
+        fetchLogin(name = name, email = email, password = password)
 
     }
 
 
-    private fun fetchLogin(name: String, email: String, password: String) {
+    private fun fetchLogin(email: String, password: String, name: String) {
         viewModelScope.launch {
-            val isSuccess = useCase.createUser(name = name, email = email, password = password)
+            val isSuccess = useCase.createUser(email = email, password = password, name = name)
             if (isSuccess) {
                 viewState.value = ProfileViewState.ShowSuccesCreate
             } else {

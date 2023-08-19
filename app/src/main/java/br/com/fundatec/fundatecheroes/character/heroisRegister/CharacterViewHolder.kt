@@ -1,10 +1,9 @@
-package br.com.fundatec.fundatecheroes.characterRegister.view
+package br.com.fundatec.fundatecheroes.character.heroisRegister
 
 import androidx.recyclerview.widget.RecyclerView
-import br.com.fundatec.fundatecheroes.databinding.CharacterListItemBinding
 import br.com.fundatec.fundatecheroes.character.data.local.CharacterModel
+import br.com.fundatec.fundatecheroes.databinding.CharacterListItemBinding
 import com.bumptech.glide.Glide
-
 
 class CharacterViewHolder(private val binding: CharacterListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
