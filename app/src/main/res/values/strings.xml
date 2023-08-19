@@ -1,8 +1,8 @@
 <resources>
     <string-array name="heroes">
         <item>Selecione</item>
-        <item>Herói</item>
-        <item>Vilão</item>
+        <item>Hero</item>
+        <item>Villain</item>
     </string-array>
     <string-array name="universe">
         <item>Selecione</item>
@@ -25,13 +25,21 @@
     <string name="login_error_message">E-mail ou senha estão inválidos!</string>
     <string name="login_email_error_message">E-mail inválido</string>
     <string name="login_password_error_message">Senha inválida</string>
+    <string name="register_age_error_message">Idade inválida</string>
+    <string name="register_birthDate_error_message">Data inválida</string>
+    <string name="register_name_error_message">Nome inválido</string>
+    <string name="register_description_error_message">Descrição inválido</string>
+    <string name="register_user_succes">Usuário criado com sucesso!</string>
+    <string name="login_error_message_hero_register">Insira todos os dados para continuar</string>
+    <string name="image_error_message">Precisa ter URL para imagem</string>
     <string name="home">Home</string>
     <string name="nomeHerois">Insira o nome do Herói/Vilão</string>
     <string name="description">Insira a descrição do Herói/Vilão</string>
     <string name="dataNascimento">Data de nascimento</string>
-    <string name="agenciaHeroi">Agencia do Herói/Vilão</string>
-    <string name="herois">Heróis/Vilões</string>
+    <string name="idadeHeroi">Idade do Herói/Vilão</string>
+    <string name="herois">Cadastrar Heróis/Vilões</string>
     <string name="utlImagemHeroi">Insira a URL da imagem do Herói/Vilão</string>
+    <string name="login_error2_message">Complete todos os dados para seguir adiante!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

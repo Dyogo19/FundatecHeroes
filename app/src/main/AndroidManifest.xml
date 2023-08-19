@@ -3,6 +3,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,22 +14,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".App"
         android:theme="@style/Theme.FundatecHeroes"
         tools:targetApi="31">
         <activity
             android:name=".profile.ProfileActivity"
             android:exported="false" />
-        <activity
-            android:name=".login.LoginActivity"
-            android:exported="false" />
+
         <activity
             android:name=".home.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".heroisRegister.RegisterHeroisActivity"
+            android:name=".character.heroisRegister.HeroRegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".main.MainActivity"
+            android:name=".login.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".main.SplashActivity"
             android:exported="true" >
 
             <intent-filter>

@@ -3,28 +3,35 @@ package br.com.fundatec.fundatecheroes.profile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import br.com.fundatec.fundatecheroes.login.domain.UserUseCase
 import br.com.fundatec.fundatecheroes.profile.model.ProfileViewState
+import kotlinx.coroutines.launch
 import java.util.regex.Pattern
 
 class ProfileViewModel : ViewModel() {
-
+    private val useCase by lazy { UserUseCase() }
     private val viewState = MutableLiveData<ProfileViewState>()
     val state: LiveData<ProfileViewState> = viewState
 
 
-    fun validateInputsRegistrer(email: String?, password: String?) {
+    fun validateInputsRegistrer(name: String?, email: String?, password: String?) {
         var patternEmail = Pattern.compile("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")
-        var patternSenha = Pattern.compile("^.{4,}$")
 
 
         var matcherEmail = patternEmail.matcher(email)
-        var matcherSenha = patternSenha.matcher(password)
+
 
 
 
 
         viewState.value = ProfileViewState.ShowLoading
 
+
+        if (name.isNullOrBlank()) {
+            viewState.value = ProfileViewState.ShowNameError
+            return
+        }
 
         if (email.isNullOrBlank() && password.isNullOrBlank()) {
             viewState.value = ProfileViewState.ShowErrorMessage
@@ -47,19 +54,23 @@ class ProfileViewModel : ViewModel() {
             return
         }
 
-        if (!matcherSenha.matches()) {
-            viewState.value = ProfileViewState.ShowPasswordErrorMessage
-            return
+
+
+        fetchLogin(name = name, email = email, password = password)
+
+    }
+
+
+    private fun fetchLogin(email: String, password: String, name: String) {
+        viewModelScope.launch {
+            val isSuccess = useCase.createUser(email = email, password = password, name = name)
+            if (isSuccess) {
+                viewState.value = ProfileViewState.ShowSuccesCreate
+            } else {
+                viewState.value = ProfileViewState.ShowErrorMessage
+            }
         }
 
-        fetchRegister(email, password)
-
     }
-
-
-    private fun fetchRegister(email: String, password: String) {
-        viewState.value = ProfileViewState.ShowHomeScreen
-    }
-
 
 }
